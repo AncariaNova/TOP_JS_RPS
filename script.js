@@ -28,36 +28,58 @@ function getPlayerSelection() {
     return desition;
 }
 
-const playerSelection = getPlayerSelection();
-
-const computerSelection = getComputerChoice();
-
 function playRound(playerSelection, computerSelection) {
     // your code here!
     if (playerSelection == computerSelection) {
         console.log("Tie!");
     } 
     else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
-        console.log("Computer Win!");
+        console.log("Computer win round!");
+        pc_score++;
     }
     else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
-        console.log("Computer Win!");
+        console.log("Computer win round!");
+        pc_score++;
     }
     else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
-        console.log("Computer Win!");
+        console.log("Computer win round!");
+        pc_score++;
     }
     else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
-        console.log("Player Win!");
+        console.log("Player win round!");
+        user_score++;
     }
     else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
-        console.log("Player Win!");
+        console.log("Player win round!");
+        user_score++;
     }
     else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
-        console.log("Player Win!");
+        console.log("Player win round!");
+        user_score++;
     }
 }
 
-console.log(playerSelection);
-console.log(computerSelection);
-playRound(playerSelection, computerSelection);
+function game() {
+    user_score = 0;
+    pc_score = 0;
+    for (i = 0; i < 5; i++) {
+        console.log(`Round: ${i + 1}`);
+        const playerSelection = getPlayerSelection();
+        const computerSelection = getComputerChoice();
+        console.log(`Player play: ${playerSelection} VS Computer play: ${computerSelection}`);
+        playRound(playerSelection, computerSelection);
+        console.log(`Player score: ${user_score}. Computer score: ${pc_score}.`);
+    }
+    if (user_score > pc_score) {
+        console.log("Player win match!");
+    }
+    else if (pc_score > user_score) {
+        console.log("Computer wins match!");
+    }
+    else {
+         console.log("Tie match!");
+    }
+}
+
+game();
 
