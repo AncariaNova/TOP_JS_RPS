@@ -1,0 +1,77 @@
+body {
+    height: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div {
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+.main_container {
+    width: 400px;
+    height: 524px;
+    background-color: darkgrey;
+    color: white;
+}
+
+.title_container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns_container {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns_container > button {
+    width: 100px;
+    height: 100px;
+}
+
+.status_container {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score_container {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score_title {
+    height: 100px;
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.score_number {
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+}
+
+#pc_scr_title {
+    border-width: 0 3px 0 0;
+}
+
+#cpu_scr_title {
+    border-width: 0 0 0 3px;
+}
